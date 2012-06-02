@@ -1,6 +1,5 @@
 wikimedia-lvs-realserver (0.05) precise-wikimedia; urgency=low
 
-  * NOT RELEASED YET.
   * Build for precise.
   * Use debhelper 8 and switch to dh.
   * Bump Standards-Version to 3.9.3.
