@@ -17,3 +17,8 @@ for SIP in $LVS_SERVICE_IPS
 do
 	ip addr del $SIP label "lo:LVS" dev lo
 done
+
+# Also delete the IPv6
+ip -6 addr ls dev lo scope global | sed -nr 's/.*inet6 //p' | while read SIPv6; do
+	ip -6 addr del $SIPv6 dev lo
+done

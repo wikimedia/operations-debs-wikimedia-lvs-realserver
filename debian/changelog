@@ -1,3 +1,9 @@
+wikimedia-lvs-realserver (0.06) precise-wikimedia; urgency=low
+
+  * Add IPv6 support.
+
+ -- Faidon Liambotis <paravoid@debian.org>  Sat, 02 Jun 2012 18:35:18 +0200
+
 wikimedia-lvs-realserver (0.05) precise-wikimedia; urgency=low
 
   * Build for precise.

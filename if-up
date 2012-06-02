@@ -24,8 +24,17 @@ do
         ip addr del $SIP label "lo:LVS" dev lo
 done
 
+# We don't have a label, so delete every globally scoped IPv6 from lo
+ip -6 addr ls dev lo scope global | sed -nr 's/.*inet6 //p' | while read SIPv6; do
+	ip -6 addr del $SIPv6 dev lo
+done
+
 # Add the service IPs to the loopback interface
-for SIP in $LVS_SERVICE_IPS
-do
-	ip addr add $SIP/32 label "lo:LVS" dev lo
+for SIP in $LVS_SERVICE_IPS; do
+	if echo $SIP | grep -q ":"; then
+		# label is ignored on IPv6
+		ip addr add $SIP/128 scope global dev lo
+	else
+		ip addr add $SIP/32 label "lo:LVS" dev lo
+	fi
 done
