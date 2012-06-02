@@ -53,9 +53,6 @@ install: build
 	dh_clean -k 
 	dh_installdirs
 
-	mkdir -p $(destdir)/etc/network/if-up.d/
-	mkdir -p $(destdir)/etc/network/if-down.d/
-
 	install -m 755 if-up $(destdir)/etc/network/if-up.d/wikimedia-lvs-realserver
 	install -m 755 if-down $(destdir)/etc/network/if-down.d/wikimedia-lvs-realserver
 
