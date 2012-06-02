@@ -54,12 +54,10 @@ install: build
 	dh_installdirs
 
 	mkdir -p $(destdir)/usr/share/wikimedia-lvs-realserver/
-	mkdir -p $(destdir)/etc/default/
 	mkdir -p $(destdir)/etc/network/if-up.d/
 	mkdir -p $(destdir)/etc/network/if-down.d/
 
 	install -m 644 sysctl.conf $(destdir)/usr/share/wikimedia-lvs-realserver/
-	install -m 644 debian/wikimedia-lvs-realserver-default $(destdir)/etc/default/wikimedia-lvs-realserver
 	install -m 755 if-up $(destdir)/etc/network/if-up.d/wikimedia-lvs-realserver
 	install -m 755 if-down $(destdir)/etc/network/if-down.d/wikimedia-lvs-realserver
 
@@ -81,7 +79,7 @@ binary-arch: build install
 #	dh_installemacsen
 #	dh_installpam
 #	dh_installmime
-#	dh_installinit
+	dh_installinit
 #	dh_installcron
 #	dh_installinfo
 	dh_installman
