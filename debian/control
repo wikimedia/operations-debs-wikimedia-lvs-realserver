@@ -1,9 +1,9 @@
 Source: wikimedia-lvs-realserver
-Section: unknown
+Section: net
 Priority: optional
 Maintainer: Mark Bergsma <mark@wikimedia.org>
-Build-Depends: debhelper (>= 4.0.0)
-Standards-Version: 3.6.2
+Build-Depends: debhelper (>= 8)
+Standards-Version: 3.9.3
 
 Package: wikimedia-lvs-realserver
 Architecture: all

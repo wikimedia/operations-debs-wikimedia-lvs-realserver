@@ -1,3 +1,12 @@
+wikimedia-lvs-realserver (0.05) precise-wikimedia; urgency=low
+
+  * NOT RELEASED YET.
+  * Build for precise.
+  * Use debhelper 8.
+  * Bump Standards-Version to 3.9.3.
+
+ -- Faidon Liambotis <faidon@wikimedia.org>  Fri, 01 Jun 2012 18:34:36 +0200
+
 wikimedia-lvs-realserver (0.04) edgy; urgency=low
 
   * Use a config script instead of debconf prompting in postinst
