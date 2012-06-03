@@ -1,3 +1,9 @@
+wikimedia-lvs-realserver (0.08) precise-wikimedia; urgency=low
+
+  * Fix postinst to work with the merged script.
+
+ -- Faidon Liambotis <faidon@wikimedia.org>  Sun, 03 Jun 2012 15:31:24 +0200
+
 wikimedia-lvs-realserver (0.07) precise-wikimedia; urgency=low
 
   * Merge if-up & if-down to a single script to avoid duplication.

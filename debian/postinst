@@ -27,7 +27,7 @@ case "$1" in
 	db_get wikimedia-lvs-realserver/service_ips
 	sed -i -e "/^LVS_SERVICE_IPS=/s/=.*$/=\\\"$RET\\\"/" $CONFIGFILE
 
-	IFACE=lo /etc/network/if-up.d/wikimedia-lvs-realserver
+	IFACE=lo MODE=start /etc/network/if-up.d/wikimedia-lvs-realserver
     ;;
 
     abort-upgrade|abort-remove|abort-deconfigure)
