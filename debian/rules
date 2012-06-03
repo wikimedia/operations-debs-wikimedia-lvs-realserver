@@ -1,12 +1,13 @@
 #!/usr/bin/make -f
 #export DH_VERBOSE=1
 
+IDIR=$(CURDIR)/debian/wikimedia-lvs-realserver
+
 %:
 	dh $@
 
 override_dh_auto_install:
 	dh_auto_install
-	install -m 755 if-up \
-		$(CURDIR)/debian/wikimedia-lvs-realserver/etc/network/if-up.d/wikimedia-lvs-realserver
-	install -m 755 if-down \
-		$(CURDIR)/debian/wikimedia-lvs-realserver/etc/network/if-down.d/wikimedia-lvs-realserver
+	install -m 755 ifupdown.sh $(IDIR)/lib/wikimedia-lvs-realserver/ifupdown.sh
+	ln -s /lib/wikimedia-lvs-realserver/ifupdown.sh $(IDIR)/etc/network/if-up.d/wikimedia-lvs-realserver
+	ln -s /lib/wikimedia-lvs-realserver/ifupdown.sh $(IDIR)/etc/network/if-down.d/wikimedia-lvs-realserver
